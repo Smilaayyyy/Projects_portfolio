@@ -43,26 +43,30 @@ body, html {
 
 
 .project-details {
-  position: fixed; /* Fixed position for the details overlay */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
-  justify-content: center; /* Center details content */
-  align-items: center; /* Center details content */
-  z-index: 1000; /* Above other elements */
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* Allows scrolling */
 }
 
 .project-details-content {
-  background-color: #fff; /* White background for details */
-  padding: 20px; /* Padding inside the details box */
-  border-radius: 10px; /* Rounded corners */
-  width: 80%; /* Responsive width */
-  max-width: 800px; /* Maximum width */
-  text-align: left; /* Align text to the left */
+  background-color: #fff;
+  max-width: 720px;
+  width: 90%;
+  max-height: 70vh; /* Constrain height */
+  overflow-y: auto; /* Add scroll to content */
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
 }
+
+
 .project-details-content p {
   font-size: 20px; /* Adjust this value as needed */
   line-height: 1.3; /* Optional: adjust line height for better readability */
@@ -88,3 +92,16 @@ body, html {
 .project-link + .project-link {
   margin-left: 10px; /* Adjust this value for desired spacing */
 }
+@media (max-width: 768px) {
+  .project-box {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .project-details-content {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+}
+
